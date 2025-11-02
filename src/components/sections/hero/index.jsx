@@ -5,8 +5,10 @@ import BackLight from "../../backlight";
 import PrimaryBtn from "../../primaryBtn";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 const Hero = () => {
+  const [isLoaded, setIsLoaded] = useState(false);
   return (
     <section id="hero" className="heroSection">
       <div className="heroContainer">
@@ -56,13 +58,14 @@ const Hero = () => {
               className="heroImg"
               src="./me.png"
               alt="Mahmoud Hashem"
+              onLoad={() => setIsLoaded(true)}
               initial={{ opacity: 0, scale: 0.95, filter: "blur(10px)" }}
-              animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
-              transition={{
-                duration: 1.5,
-                ease: [0.25, 0.1, 0.25, 1],
-                delay: 1,
-              }}
+              animate={
+                isLoaded
+                  ? { opacity: 1, scale: 1, filter: "blur(0px)" }
+                  : { opacity: 0, scale: 0.95, filter: "blur(10px)" }
+              }
+              transition={{ duration: 1.5, ease: "easeOut" }}
             />
 
             {/* Right Button */}
