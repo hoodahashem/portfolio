@@ -4,13 +4,13 @@ import Home from "./pages/home";
 
 function App() {
   return (
-    <div className="app">
+    <main className="app">
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
         </Routes>
       </BrowserRouter>
-    </div>
+    </main>
   );
 }
 

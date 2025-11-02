@@ -17,7 +17,11 @@ const SocialMedia = () => {
         whileHover={{ scale: 1.3, rotate: 5 }}
         transition={{ type: "spring", stiffness: 150, damping: 8 }}
       >
-        <a href="https://www.linkedin.com/in/hoodahashem" target="_blank">
+        <a
+          href="https://www.linkedin.com/in/hoodahashem"
+          target="_blank"
+          aria-label="Click here for my linkedin profile"
+        >
           <SlSocialLinkedin className="activeText" />
         </a>
       </motion.li>
@@ -26,7 +30,11 @@ const SocialMedia = () => {
         whileHover={{ scale: 1.3, rotate: 5 }}
         transition={{ type: "spring", stiffness: 150, damping: 8 }}
       >
-        <a href="https://github.com/HoodaHashem" target="_blank">
+        <a
+          href="https://github.com/HoodaHashem"
+          target="_blank"
+          aria-label="Click here for my github profile"
+        >
           <FaGithub />
         </a>
       </motion.li>
@@ -35,7 +43,11 @@ const SocialMedia = () => {
         whileHover={{ scale: 1.3, rotate: 5 }}
         transition={{ type: "spring", stiffness: 150, damping: 8 }}
       >
-        <a href="https://x.com/HoodaHashem" target="_blank">
+        <a
+          href="https://x.com/HoodaHashem"
+          target="_blank"
+          aria-label="Click here for my twitter profile"
+        >
           <FaXTwitter />
         </a>
       </motion.li>

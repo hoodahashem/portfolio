@@ -43,6 +43,7 @@ const PortfolioCards = () => {
           onClick={prevCard}
           disabled={isAnimating}
           className={`nav-button ${isAnimating ? "disabled" : ""}`}
+          name="previous card"
         >
           <FaArrowLeftLong />
         </button>
@@ -89,7 +90,7 @@ const PortfolioCards = () => {
         </div>
         <div className={`cardContent ${isAnimating ? "fadeIn" : ""}`}>
           <h2>{projects[getCardNumber(currentIndex + 3)].title}</h2>
-          <h4>{projects[getCardNumber(currentIndex + 3)].subtitle}</h4>
+          <h3>{projects[getCardNumber(currentIndex + 3)].subtitle}</h3>
           <p>{projects[getCardNumber(currentIndex + 3)].description}</p>
         </div>
       </div>
@@ -129,6 +130,7 @@ const PortfolioCards = () => {
           onClick={nextCard}
           disabled={isAnimating}
           className={`nav-button ${isAnimating ? "disabled" : ""}`}
+          name="next card"
         >
           <FaArrowRightLong />
         </button>
