@@ -3,11 +3,7 @@ import { useRef, useState } from "react";
 import BackText from "../../backText";
 import PrimaryBtn from "../../primaryBtn";
 import { IoSend } from "react-icons/io5";
-import {
-  FaGithub,
-  FaLinkedinIn,
-  FaXTwitter,
-} from "react-icons/fa6";
+import { FaGithub, FaLinkedinIn, FaXTwitter } from "react-icons/fa6";
 import { sendForm } from "@emailjs/browser";
 
 const Contact = () => {
@@ -48,7 +44,7 @@ const Contact = () => {
         "service_p581kew",
         "template_w8b2r9j",
         form.current,
-        "YVn67xznuO64gmEgf",
+        "YVn67xznuO64gmEgf"
       );
 
       if (result.text === "OK") {
@@ -144,6 +140,7 @@ const Contact = () => {
             href="https://github.com/HoodaHashem"
             className="social-link"
             target="_blank"
+            aria-label="Click here for my github profile"
           >
             <FaGithub />
           </a>
@@ -151,6 +148,7 @@ const Contact = () => {
             className="social-link"
             href="https://x.com/HoodaHashem"
             target="_blank"
+            aria-label="Click here for my twitter profile"
           >
             <FaXTwitter />
           </a>
@@ -158,6 +156,7 @@ const Contact = () => {
             className="social-link"
             href="https://www.linkedin.com/in/hoodahashem"
             target="_blank"
+            aria-label="Click here for my linkedin profile"
           >
             <FaLinkedinIn />
           </a>

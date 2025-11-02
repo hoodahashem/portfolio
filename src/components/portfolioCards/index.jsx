@@ -43,7 +43,7 @@ const PortfolioCards = () => {
           onClick={prevCard}
           disabled={isAnimating}
           className={`nav-button ${isAnimating ? "disabled" : ""}`}
-          name="previous card"
+          aria-label="previous card"
         >
           <FaArrowLeftLong />
         </button>
@@ -130,7 +130,7 @@ const PortfolioCards = () => {
           onClick={nextCard}
           disabled={isAnimating}
           className={`nav-button ${isAnimating ? "disabled" : ""}`}
-          name="next card"
+          aria-label="next card"
         >
           <FaArrowRightLong />
         </button>

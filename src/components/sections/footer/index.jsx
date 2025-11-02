@@ -15,6 +15,7 @@ const Footer = () => {
               href="https://github.com/HoodaHashem"
               className="social-link"
               target="_blank"
+              aria-label="Click here for my github profile"
             >
               <FaGithub />
             </a>
@@ -22,6 +23,7 @@ const Footer = () => {
               className="social-link"
               href="https://x.com/HoodaHashem"
               target="_blank"
+              aria-label="Click here for my twitter profile"
             >
               <FaXTwitter />
             </a>
@@ -29,6 +31,7 @@ const Footer = () => {
               className="social-link"
               href="https://www.linkedin.com/in/hooda-hashem"
               target="_blank"
+              aria-label="Click here for my linkedin profile"
             >
               <FaLinkedinIn />
             </a>
