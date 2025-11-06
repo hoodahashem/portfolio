@@ -41,7 +41,7 @@ const Contact = () => {
 
     try {
       const result = await sendForm(
-        "service_p581kew",
+        "service_rqftn4s",
         "template_w8b2r9j",
         form.current,
         "YVn67xznuO64gmEgf"
