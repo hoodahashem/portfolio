@@ -7,18 +7,36 @@ const BackText = ({ backText, topText }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
 
-  // Variants for each letter
   const letterVariant = {
     hidden: { opacity: 0, y: 30 },
     visible: { opacity: 1, y: 0 },
   };
 
-  // Controls the timing between letters
   const containerVariant = {
     hidden: {},
     visible: {
       transition: { staggerChildren: 0.05, ease: "easeOut" },
     },
+  };
+
+  // Split by words instead of characters
+  const animateByWords = (text) => {
+    return text.split(" ").map((word, wordIndex) => (
+      <span key={wordIndex} style={{ display: "inline-block", whiteSpace: "nowrap" }}>
+        {word.split("").map((char, charIndex) => (
+          <motion.span
+            key={`${wordIndex}-${charIndex}`}
+            variants={letterVariant}
+            style={{ display: "inline-block" }}
+          >
+            {char}
+          </motion.span>
+        ))}
+        {wordIndex < text.split(" ").length - 1 && (
+          <span style={{ display: "inline-block", width: "0.25em" }}>&nbsp;</span>
+        )}
+      </span>
+    ));
   };
 
   return (
@@ -29,20 +47,16 @@ const BackText = ({ backText, topText }) => {
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
     >
-      <motion.p variants={containerVariant}>
-        {backText.split("").map((char, i) => (
-          <motion.span key={i} variants={letterVariant}>
-            {char === " " ? "\u00A0" : char}
-          </motion.span>
-        ))}
+      <motion.p
+        variants={containerVariant}
+      >
+        {animateByWords(backText)}
       </motion.p>
 
-      <motion.h1 variants={containerVariant}>
-        {topText.split("").map((char, i) => (
-          <motion.span key={i} variants={letterVariant}>
-            {char === " " ? "\u00A0" : char}
-          </motion.span>
-        ))}
+      <motion.h1
+        variants={containerVariant}
+      >
+        {animateByWords(topText)}
       </motion.h1>
     </motion.div>
   );
